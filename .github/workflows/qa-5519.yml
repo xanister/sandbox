@@ -1,0 +1,7 @@
+name: qa-5519
+on: [pull_request]
+jobs:
+  ok:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "qa-5519 check ok"
