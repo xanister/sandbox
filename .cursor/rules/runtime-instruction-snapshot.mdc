@@ -1,0 +1,16 @@
+---
+description: local verification fixture for vector#6439 (runtime-instruction copy guard); delete after the check
+alwaysApply: true
+---
+
+## Delegation Tools
+
+Fixture copy of a runtime-owned section.
+
+## Tracked GitHub Repos
+
+Fixture copy of a runtime-owned section.
+
+IMPORTANT — workspace setup:
+
+Fixture copy of a runtime-owned section.
