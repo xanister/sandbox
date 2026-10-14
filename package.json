@@ -2,7 +2,7 @@
   "name": "sandbox",
   "private": true,
   "scripts": {
-    "build": "node -e \"console.log('fixture build ok: ' + require('fs').readFileSync('VERSION','utf8').trim())\"",
+    "build": "node -e \"console.log('fixture slow build start'); setTimeout(()=>console.log('fixture slow build done'), 45000)\"",
     "start": "node server.js",
     "dev": "node server.js",
     "stop": "pkill -f 'node server.js' || true"
