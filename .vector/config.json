@@ -1,0 +1,7 @@
+{
+  "hasServer": true,
+  "startCommand": "node server.js",
+  "stopCommand": "pkill -f 'node server.js' || true",
+  "services": [{ "name": "app", "port": 3000, "envVar": "PORT", "primary": true, "exposeOnHost": true, "healthPath": "/health" }],
+  "testingMode": "web"
+}

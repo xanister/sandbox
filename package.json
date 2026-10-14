@@ -2,8 +2,9 @@
   "name": "sandbox",
   "private": true,
   "scripts": {
-    "start": "node -e \"console.log('sandbox repo has no runtime')\"",
-    "dev": "node -e \"console.log('sandbox repo has no dev server')\"",
-    "stop": "node -e \"console.log('sandbox repo has nothing to stop')\""
+    "build": "node -e \"console.log('fixture build ok: ' + require('fs').readFileSync('VERSION','utf8').trim())\"",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "stop": "pkill -f 'node server.js' || true"
   }
 }
