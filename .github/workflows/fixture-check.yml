@@ -1,0 +1,14 @@
+name: fixture-check
+on:
+  pull_request:
+    branches: [fixture/protected-main]
+jobs:
+  fixture-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: slow required check (deterministic pending window for merge-gate verification)
+        run: |
+          echo "PR title: ${{ github.event.pull_request.title }}"
+          sleep 150
+          case "${{ github.event.pull_request.title }}" in *FIXTURE-RED*) echo "red on purpose"; exit 1;; esac
+          echo green
