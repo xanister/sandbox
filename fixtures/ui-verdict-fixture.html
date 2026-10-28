@@ -14,8 +14,7 @@
         max-width: 320px;
       }
       .rail span {
-        overflow-wrap: anywhere;
-        max-width: 39px;
+        white-space: nowrap;
         border: 1px solid #ccc;
         padding: 2px 4px;
         font-size: 11px;
@@ -29,8 +28,8 @@
         gap: 6px;
       }
       .pill {
-        background: #f97316;
-        color: #7c3aed;
+        background: #1e293b;
+        color: #f8fafc;
         padding: 4px 8px;
         border-radius: 999px;
       }
@@ -71,7 +70,7 @@
       };
       document.getElementById('close-sheet').onclick = () => {
         sheet.hidden = true;
-        document.body.focus();
+        opener.focus();
       };
     </script>
   </body>
