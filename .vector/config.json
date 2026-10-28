@@ -1,0 +1,7 @@
+{
+  "hasServer": true,
+  "startCommand": "node fixtures/serve.mjs",
+  "stopCommand": "true",
+  "services": [{ "name": "fixture", "port": 8080, "primary": true, "envVar": "PORT" }],
+  "testingMode": "web"
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>UI verdict fixture</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 1rem;
+      }
+      .rail {
+        display: flex;
+        gap: 4px;
+        max-width: 320px;
+      }
+      .rail span {
+        overflow-wrap: anywhere;
+        max-width: 39px;
+        border: 1px solid #ccc;
+        padding: 2px 4px;
+        font-size: 11px;
+      }
+      .pills {
+        display: none;
+        margin-top: 8px;
+      }
+      .pills[data-populated='true'] {
+        display: flex;
+        gap: 6px;
+      }
+      .pill {
+        background: #f97316;
+        color: #7c3aed;
+        padding: 4px 8px;
+        border-radius: 999px;
+      }
+      .sheet {
+        margin-top: 12px;
+        padding: 8px;
+        border: 1px solid #888;
+        max-width: 200px;
+      }
+      .sheet button:focus-visible {
+        outline: 3px solid #2563eb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rail" id="rail">
+      <span>Dashboard</span><span>Settings</span><span>Agents</span><span>Tickets</span>
+      <span>Pipeline</span><span>Artifacts</span><span>Reports</span>
+    </div>
+    <button type="button" id="toggle">Toggle data state</button>
+    <div class="pills" id="pills" data-populated="false"><span class="pill">3 active</span></div>
+    <button type="button" id="open-sheet">Open sheet</button>
+    <div class="sheet" id="sheet" hidden>
+      <p>Companion sheet</p>
+      <button type="button" id="close-sheet">Close</button>
+    </div>
+    <script>
+      const pills = document.getElementById('pills');
+      document.getElementById('toggle').onclick = () => {
+        const on = pills.dataset.populated !== 'true';
+        pills.dataset.populated = on ? 'true' : 'false';
+      };
+      const opener = document.getElementById('open-sheet');
+      const sheet = document.getElementById('sheet');
+      opener.onclick = () => {
+        sheet.hidden = false;
+        document.getElementById('close-sheet').focus();
+      };
+      document.getElementById('close-sheet').onclick = () => {
+        sheet.hidden = true;
+        document.body.focus();
+      };
+    </script>
+  </body>
+</html>
