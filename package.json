@@ -2,6 +2,7 @@
   "name": "sandbox",
   "private": true,
   "scripts": {
+    "build": "node -e \"console.log('sandbox repo has no build step')\"",
     "start": "node -e \"console.log('sandbox repo has no runtime')\"",
     "dev": "node -e \"console.log('sandbox repo has no dev server')\"",
     "stop": "node -e \"console.log('sandbox repo has nothing to stop')\""
